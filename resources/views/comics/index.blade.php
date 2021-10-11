@@ -15,10 +15,15 @@
         <tbody>
             @forelse ($comics as $comic)
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>
+                        @if ($comic->thumb)
+                            <img src="{{ $comic->thumb }}" alt="" class="img-fluid me-2" width="20">
+                        @endif
+                        {{ $comic->title }}
+                    </td>
+                    <td>{{ $comic->series }}</td>
+                    <td>{{ $comic->sale_date }}</td>
+                    <td>{{ $comic->price }}</td>
                 </tr>
             @empty
                 <tr>
