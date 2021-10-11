@@ -11243,3 +11243,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.main-card {
+  border-radius: 20px;
+  box-shadow: 0 0 5px #000;
+}
