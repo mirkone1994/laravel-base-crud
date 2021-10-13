@@ -24,7 +24,7 @@
             <div class="col-6">
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo</label>
-                    <input type="number" class="form-control" id="price" name="price" value="{{ $comic->price }}">
+                    <input type="number" class="form-control" id="price" name="price" step=".01" value="{{ $comic->price }}">
                     <div class="form-text">Inserire il prezzo</div>
                   </div>
             </div>
