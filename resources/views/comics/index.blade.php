@@ -27,6 +27,7 @@
                     <td>{{ $comic->price }}</td>
                     <td>
                         <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Dettagli</a>
+                        <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning ms-2">Modifica</a>
                     </td>
                 </tr>
             @empty
