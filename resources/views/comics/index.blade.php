@@ -3,6 +3,7 @@
 @section('section-id', 'comics')
 @section('content')
     <h1 class="card-title">Comics</h1>
+    <a class="btn btn-primary w-25" href="{{ route('comics.create') }}">Crea il tuo fumetto</a>
     <table class="table">
         <thead>
           <tr>

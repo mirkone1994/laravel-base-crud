@@ -1,0 +1,5 @@
+@extends('layouts.main')
+@section('title', 'Crea fumetto')
+@section('section-id', 'create-comic')
+@section('content')
+@endsection
