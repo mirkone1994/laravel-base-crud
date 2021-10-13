@@ -14,6 +14,9 @@
         <li class="nav-item">
           <a class="nav-link {{ request()->routeIs('comics.index') ? 'active' : '' }}" href="{{ route('comics.index') }}">Comics</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ request()->routeIs('comics.create') ? 'active' : '' }}" href="{{ route('comics.create') }}">Crea</a>
+        </li>
       </ul>
     </div>
   </div>
