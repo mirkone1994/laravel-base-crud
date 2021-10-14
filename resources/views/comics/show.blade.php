@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="card-footer bg-white d-flex justify-content-end">
-        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" id="delete-form">
+        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" class="delete-form" data-comic="{{ $comic->title }}">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Elimina</button>
@@ -29,13 +29,5 @@
     </div>
 @endsection
 @section('script')
-    <script>
-        const deleteFormElement = document.getElementById('delete-form');
-        deleteFormElement.addEventListener('submit', function(e) {
-            event.preventDefault();
-            const confirm = window.confirm('Questa azione è irreversibile, vuoi eliminare {{ $comic->title }}?');
-            if (confirm) this.submit();
-        });
-        
-    </script>
+    <script src="{{ asset('js/delete.js') }}"></script>
 @endsection
