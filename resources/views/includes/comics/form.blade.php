@@ -57,6 +57,6 @@
     </div>
     <div class="card-footer bg-white d-flex justify-content-end">
         <button type="reset" class="btn btn-danger me-2">Cancella Tutto</button>
-        <button type="submit" class="btn btn-success">Salva Modifiche</button>
+        <button type="submit" class="btn btn-success">{{ $comic->id ? 'Salva Modifiche' : 'Salva' }}</button>
     </div>
 </form>
