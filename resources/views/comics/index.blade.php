@@ -2,6 +2,11 @@
 @section('title', 'Comics')
 @section('section-id', 'comics')
 @section('content')
+    @if(session('delete'))
+    <div class="alert alert-success" role="alert">
+        {{ session('delete') }} eliminato con successo!
+    </div>
+    @endif
     <h1 class="card-title">Comics</h1>
     <a class="btn btn-primary w-25" href="{{ route('comics.create') }}">Crea il tuo fumetto</a>
     <table class="table">
