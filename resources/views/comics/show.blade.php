@@ -20,5 +20,11 @@
             <p>{{ $comic->description }}</p>
         </div>
     </div>
-    
+    <div class="card-footer bg-white d-flex justify-content-end">
+        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Elimina</button>
+        </form>
+    </div>
 @endsection
