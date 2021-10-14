@@ -33,7 +33,7 @@
                     <td class="d-flex">
                         <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Dettagli</a>
                         <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning ms-2">Modifica</a>
-                        <form method="POST" action="{{ route('comics.destroy', $comic->id) }}">
+                        <form method="POST" action="{{ route('comics.destroy', $comic->id) }}" class="delete-form" data-comic="{{$comic->title}}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger ms-2">Elimina</button>
@@ -49,4 +49,18 @@
             @endforelse
         </tbody>
       </table>
+@endsection
+@section('script')
+    <script>
+        const deleteFormElements = document.querySelectorAll('.delete-form');
+        deleteFormElements.forEach(form => {
+            form.addEventListener('submit', function(e) {
+            const title = form.getAttribute('data-comic');
+            event.preventDefault();
+            const confirm = window.confirm(`Questa azione è irreversibile, vuoi eliminare  ${title}?`);
+            if (confirm) this.submit();
+        }); 
+        })
+        
+    </script>
 @endsection
